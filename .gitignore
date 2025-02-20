@@ -1,0 +1,24 @@
+# 🚀 Python Virtual Environment
+env/
+venv/
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+*.swp
+
+# 🚀 OS & Editor-Specific
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+*.log
+
+# 🚀 Config Files (Sensitive Data)
+config.py  # ✅ Contains API keys, AWS credentials (add manually on server)
+.env       # ✅ If using environment variables
+
+# 🚀 AWS & S3
+.aws/
+*.csv  # ✅ Prevent accidental CSV uploads (optional)

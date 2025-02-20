@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Job Listings</title>
+    <!-- Load Montserrat font from Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* General Styling */
+        body {
+            font-family: 'Montserrat', Arial, sans-serif;
+            background: linear-gradient(to right, #003870, #0073e6);
+            margin: 0;
+            padding: 0;
+            color: #333;
+            text-transform: capitalize;
+        }
+
+        /* Container Styling */
+        .container {
+            width: 100%;
+            max-width: 650px;
+            margin: 50px auto;
+            background: #ffffff;
+            padding: 25px;
+            border-radius: 12px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+            text-align: center;
+        }
+
+        /* Logo Styling */
+        .logo {
+            display: block;
+            margin: 0 auto 10px;
+            width: 180px;
+            border-radius: 12px;
+        }
+
+        /* Intro Text */
+        .intro {
+            font-size: 16px;
+            color: #555;
+            margin-bottom: 15px;
+            line-height: 1.6;
+        }
+
+        /* Title Styling */
+        h1 {
+            color: #003870;
+            font-size: 34px;
+            margin-bottom: 5px;
+            text-transform: uppercase;
+        }
+
+        /* Job Listings Count */
+        .job-count {
+            font-size: 18px;
+            color: #0073e6;
+            margin-bottom: 8px;
+            font-weight: bold;
+            background: #f1f1f1;
+            display: inline-block;
+            padding: 6px 12px;
+            border-radius: 20px;
+        }
+
+        /* Separator */
+        .separator {
+            border: none;
+            border-top: 2px solid #0073e6;
+            opacity: 0.5;
+            width: 50%;
+            margin: 10px auto;
+        }
+
+        /* Job Listing Card */
+        .job-listing {
+            background: #f9f9f9;
+            padding: 12px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            margin: 8px 0;
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .job-listing:hover {
+            background: #eaf3ff;
+            transform: scale(1.02);
+        }
+
+        /* Job Details */
+        .job-title {
+            font-size: 22px;
+            color: #0073e6;
+            margin-bottom: 3px;
+            font-weight: bold;
+        }
+
+        .job-company {
+            font-size: 18px;
+            color: #555;
+            margin: 3px 0;
+        }
+
+        .job-location {
+            font-size: 16px;
+            color: #777;
+            margin: 3px 0;
+        }
+
+        .job-salary {
+            font-size: 18px;
+            color: #28a745;
+            margin: 3px 0;
+            font-weight: bold;
+        }
+
+        /* Footer */
+        .footer {
+            text-align: center;
+            margin-top: 15px;
+            font-size: 14px;
+            color: #777;
+        }
+
+        .footer a {
+            color: #0073e6;
+            text-decoration: none;
+        }
+
+        .footer a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <!-- Logo -->
+        <img src="https://png.pngtree.com/png-clipart/20231016/original/pngtree-job-search-png-png-image_13322165.png" 
+             alt="Job Listings Logo" class="logo">
+
+        <!-- Intro statement -->
+        <p class="intro">
+            This app uses Selenium to fetch real-time job listings for <strong>{{ job_title }}</strong> in <strong>{{ location }}</strong> from Adzuna.com.
+            Explore the opportunities below and apply directly if interested. Your information is not shared unless you apply.
+            <br><br>
+            <strong>All jobs are from employers posted or reposted in the last 3 days.</strong>
+        </p>
+
+        <h1>Job Listings</h1>
+
+        <!-- Job Listings Count -->
+        <p class="job-count">Top job listings: {{ jobs|length }}</p>
+
+        <!-- Separator -->
+        <hr class="separator">
+
+        <!-- Job Listings Dynamically Rendered -->
+        {% if jobs %}
+            {% for job in jobs %}
+                <div class="job-listing">
+                    <h2 class="job-title">{{ job['title'] }}</h2>
+                    <p class="job-company">Posted By: {{ job['company'] }}</p>
+                    <p class="job-location">Location: {{ job['location'] }}</p>
+                    <p class="job-salary">Estimated Salary: {{ job['salary'] }}</p>
+                </div>
+            {% endfor %}
+        {% else %}
+            <p class="job-count">❌ No job listings found.</p>
+        {% endif %}
+
+        <div class="footer">
+            <p>If you have any questions, feel free to <a href="mailto:support@example.com">contact us</a>.</p>
+            <p>&copy; 2025 Job Listings. All rights reserved <a href="www.github.com/r0han01">@ GitHub</a>.</p>
+        </div>
+    </div>
+</body>
+
+</html>

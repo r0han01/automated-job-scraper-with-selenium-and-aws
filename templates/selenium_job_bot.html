@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dynamic Job Search</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+
+<body>
+    <div class="container">
+
+        <!-- Logo -->
+        <img src="https://png.pngtree.com/png-clipart/20231016/original/pngtree-job-search-png-png-image_13322165.png"
+            alt="Job Listings Logo" class="logo">
+        <h1>Find Your Dream Job</h1>
+
+        <!-- Popular Job Titles (Left Side) -->
+        <div class="bubbles">
+            <div class="left">
+                <h3>Popular Job Titles</h3>
+                <div class="bubble small" onclick="fillJobTitle('Data Analyst')">Data Analyst</div>
+                <div class="bubble large" onclick="fillJobTitle('Software Engineer')">Software Engineer</div>
+                <div class="bubble medium" onclick="fillJobTitle('Product Manager')">Product Manager</div>
+                <div class="bubble small" onclick="fillJobTitle('Marketing Specialist')">Marketing Specialist</div>
+                <div class="bubble large" onclick="fillJobTitle('Graphic Designer')">Graphic Designer</div>
+            </div>
+
+            <!-- Popular States (Right Side) -->
+            <div class="right">
+                <h3>Popular States</h3>
+                <div class="bubble medium" onclick="fillLocation('California')">California</div>
+                <div class="bubble small" onclick="fillLocation('New York')">New York</div>
+                <div class="bubble large" onclick="fillLocation('Texas')">Texas</div>
+                <div class="bubble small" onclick="fillLocation('Florida')">Florida</div>
+                <div class="bubble medium" onclick="fillLocation('Washington')">Washington</div>
+                <div class="bubble large" onclick="fillLocation('Georgia')">Georgia</div>
+                <div class="bubble medium" onclick="fillLocation('Arizona')">Arizona</div>
+                <div class="bubble small" onclick="fillLocation('Colorado')">Colorado</div>
+            </div>
+        </div>
+
+        <!-- Job Title and Location Heading -->
+        <h3>Job Title * Location</h3>
+
+        <!-- Job Title and Location Inputs -->
+        <div class="input-group">
+            <input type="text" id="jobTitle" placeholder="Select or Enter a Job Title">
+            <input type="text" id="location" placeholder="Select or Enter a Location">
+        </div>
+
+        <!-- Search Button -->
+        <button class="search-button" onclick="searchJobs()">Start Automated Job Scraping
+        </button>
+    </div>
+
+    <!-- Countdown Pop-up -->
+    <div id="countdownPopup" class="countdown-popup">
+        <p>Your Job Search automation starts in <span id="countdown">8</span> seconds...</p>
+        <p class="fun-line">Sit back, relax, and watch Selenium do its magic!</p>
+        <div class="reload-icon"></div>
+    </div>
+
+    <div id="overlay" class="overlay"></div>
+
+    </div>
+
+    <!-- Link External JavaScript -->
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+
+</body>
+
+</html>
