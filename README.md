@@ -66,6 +66,7 @@ selenium_job_bot_project/
 - It searches for **latest jobs** based on the user's input.
 - Pop-ups and cookies are handled **automatically**.
 - Extracted jobs are **logged & stored in a list**.
+# This is a Automated Process You Dont Even Need To Touch Mouse After Hitting The Button, Watch Below Video !!
 ###
 ![Screencastfrom2025-02-2001-08-32-ezgif com-video-to-gif-converter](https://github.com/user-attachments/assets/d4be3aca-0663-4c2b-9205-f74527c292c7)
 ###
