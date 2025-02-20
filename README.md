@@ -1,9 +1,9 @@
 
-# **Job Search Automation with Selenium & AWS S3**
+## **Job Search Automation with Selenium & AWS S3**
 
-🚀 **Automated Job Scraper** using **Selenium, Flask, and AWS S3** to fetch real-time job listings from **Adzuna** and store them in **Amazon S3**. The results are displayed dynamically on a web page.
+**Automated Job Scraper** using **Selenium, Flask, and AWS S3** to fetch real-time job listings from **Adzuna** and store them in **Amazon S3**. The results are displayed dynamically on a web page.
 
-## **📌 Features**
+## ** Features**
 - **Automated Job Search** → Uses **Selenium** to scrape job listings from Adzuna.
 - **Dynamic Web UI** → Built with **Flask & Jinja2 Templates**.
 - **Data Export to AWS S3** → Saves job listings as **CSV files** in an S3 bucket.
@@ -13,7 +13,7 @@
 
 ---
 
-## **🛠️ Technologies Used**
+## **Technologies Used**
 | Technology  | Purpose |
 |------------|---------|
 | **Python** | Core programming language |
@@ -48,7 +48,7 @@ selenium_job_bot_project/
 
 ---
 
-## **🚀 How It Works**
+## **How It Works**
 ### **Step 1: User Searches for Jobs**
 - The Flask web app provides an input form.
 - The user enters a **Job Title** and **Location**.
@@ -74,7 +74,7 @@ selenium_job_bot_project/
 
 ---
 
-## **🔧 Functions & Key Components**
+## **Functions & Key Components**
 | Function  | Purpose |
 |------------|---------|
 | **`start_selenium(job_title, location)`** | Starts Selenium and scrapes jobs |
@@ -85,11 +85,11 @@ selenium_job_bot_project/
 
 ---
 
-## **💻 Setup & Installation**
+## **Setup & Installation**
 ### **Step 1: Clone the Repository**
 ```bash
-git clone https://github.com/your-username/selenium-job-bot.git
-cd selenium-job-bot
+git clone https://github.com/r0han01/automated-job-scraper-with-selenium-and-aws.git
+cd automated-job-scraper-with-selenium-and-aws
 ```
 
 ### **Step 2: Create Virtual Environment**
@@ -133,20 +133,6 @@ python app.py
 | `git commit -m "Your message"` | Commit changes |
 | `git push origin main` | Push code to GitHub |
 
----
-
-## **🌟 Future Improvements**
-✅ Add **pagination & filtering** for job results.  
-✅ Implement **scheduled scraping** with AWS Lambda.  
-✅ Store job data in **Amazon DynamoDB** for faster retrieval.  
-✅ Enhance **error handling & logging**.
-
----
-
-## **📌 Author**
-👨‍💻 **Developed by:** [Your Name]  
-📧 **Contact:** your-email@example.com  
-🔗 **GitHub:** [your-github-url](https://github.com/your-username)
 
 ---
 
