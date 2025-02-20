@@ -3,7 +3,7 @@
 
 **Automated Job Scraper** using **Selenium, Flask, and AWS S3** to fetch real-time job listings from **Adzuna** and store them in **Amazon S3**. The results are displayed dynamically on a web page.
 
-## ** Features**
+## **Features**
 - **Automated Job Search** → Uses **Selenium** to scrape job listings from Adzuna.
 - **Dynamic Web UI** → Built with **Flask & Jinja2 Templates**.
 - **Data Export to AWS S3** → Saves job listings as **CSV files** in an S3 bucket.
