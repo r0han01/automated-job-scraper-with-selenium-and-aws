@@ -2,16 +2,15 @@ import csv
 import os
 import boto3
 from datetime import datetime
-from config import AWS_ACCESS_KEY, AWS_SECRET_KEY
-
+import os  # ✅ Import os for environment variables
 # S3 Bucket Name
 BUCKET_NAME = "job-search-results"
 
 # AWS S3 Client Setup
 s3_client = boto3.client(
     "s3",
-    aws_access_key_id=AWS_ACCESS_KEY,
-    aws_secret_access_key=AWS_SECRET_KEY
+    aws_access_key_id=os.environ.get("AWS_ACCESS_KEY"),
+    aws_secret_access_key=os.environ.get("AWS_SECRET_KEY")
 )
 
 def export_jobs_to_s3(job_list, job_title, location):

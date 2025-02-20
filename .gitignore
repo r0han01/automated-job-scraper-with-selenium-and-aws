@@ -22,3 +22,8 @@ config.py  # ✅ Contains API keys, AWS credentials (add manually on server)
 # 🚀 AWS & S3
 .aws/
 *.csv  # ✅ Prevent accidental CSV uploads (optional)
+
+config.py
+.env
+__pycache__/
+env/

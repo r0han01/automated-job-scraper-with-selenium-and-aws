@@ -3,18 +3,18 @@ import threading
 import boto3
 import csv
 import io
+import os  # ✅ Import os for environment variables
 from selenium_scraper import start_selenium
 from export_jobs import export_jobs_to_s3
-from config import AWS_ACCESS_KEY, AWS_SECRET_KEY
 
 app = Flask(__name__)
 
-# AWS S3 Setup
+# ✅ AWS S3 Setup using environment variables
 BUCKET_NAME = "job-search-results"
 s3_client = boto3.client(
     "s3",
-    aws_access_key_id=AWS_ACCESS_KEY,
-    aws_secret_access_key=AWS_SECRET_KEY
+    aws_access_key_id=os.environ.get("AWS_ACCESS_KEY"),
+    aws_secret_access_key=os.environ.get("AWS_SECRET_KEY")
 )
 
 @app.route('/')
@@ -45,8 +45,7 @@ def search_jobs():
     selenium_thread.start()
 
     response_message = "✅ Automation started successfully!"
-    
-    print(response_message)  # ✅ Print the message so it appears in the terminal
+    print(response_message)  # ✅ Print message in terminal
 
     return jsonify({'message': response_message})
 
